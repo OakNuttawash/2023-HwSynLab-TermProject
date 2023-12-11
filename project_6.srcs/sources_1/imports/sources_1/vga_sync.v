@@ -175,7 +175,7 @@ module vga(
         x,
         y
     );
-
+	
 	wire [11:0] rgb_digit10;
 	digit digit10(
 		.rgb(rgb_digit10),
@@ -223,6 +223,123 @@ module vga(
 		.x(460),
 		.y(420)
 	);
+	
+	wire [11:0] rgb_e;
+	text digitE(
+		.rgb(rgb_e),
+		.num(4),
+		.reset(reset),
+		.p_tick(p_tick),
+		.rx(x),
+		.ry(y),
+		.x(400),
+		.y(420),
+		.color(12'hFF0)
+	);
+	
+	wire [11:0] rgb_r;
+	text digitR(
+		.rgb(rgb_r),
+		.num(3),
+		.reset(reset),
+		.p_tick(p_tick),
+		.rx(x),
+		.ry(y),
+		.x(360),
+		.y(420),
+		.color(12'hFF0)
+	);
+	
+	wire [11:0] rgb_o;
+	text digitO(
+		.rgb(rgb_o),
+		.num(2),
+		.reset(reset),
+		.p_tick(p_tick),
+		.rx(x),
+		.ry(y),
+		.x(320),
+		.y(420),
+		.color(12'hFF0)
+	);
+	
+	wire [11:0] rgb_c;
+	text digitC(
+		.rgb(rgb_c),
+		.num(1),
+		.reset(reset),
+		.p_tick(p_tick),
+		.rx(x),
+		.ry(y),
+		.x(280),
+		.y(420),
+		.color(12'hFF0)
+	);
+	
+	wire [11:0] rgb_s;
+	text digitS(
+		.rgb(rgb_s),
+		.num(0),
+		.reset(reset),
+		.p_tick(p_tick),
+		.rx(x),
+		.ry(y),
+		.x(240),
+		.y(420),
+		.color(12'hFF0)
+	);
+	
+	wire [11:0] rgb_p1p;
+	text digitP1P(
+		.rgb(rgb_p1p),
+		.num(5),
+		.reset(reset),
+		.p_tick(p_tick),
+		.rx(x),
+		.ry(y),
+		.x(60),
+		.y(420),
+		.color(12'hF00)
+	);
+	
+	wire [11:0] rgb_p11;
+	text digitP11(
+		.rgb(rgb_p11),
+		.num(6),
+		.reset(reset),
+		.p_tick(p_tick),
+		.rx(x),
+		.ry(y),
+		.x(90),
+		.y(420),
+		.color(12'hF00)
+	);
+	
+	wire [11:0] rgb_p2p;
+	text digitP2P(
+		.rgb(rgb_p2p),
+		.num(5),
+		.reset(reset),
+		.p_tick(p_tick),
+		.rx(x),
+		.ry(y),
+		.x(540),
+		.y(420),
+		.color(12'hF00)
+	);
+	
+	wire [11:0] rgb_p22;
+	text digitP22(
+		.rgb(rgb_p22),
+		.num(7),
+		.reset(reset),
+		.p_tick(p_tick),
+		.rx(x),
+		.ry(y),
+		.x(580),
+		.y(420),
+		.color(12'hF00)
+	);
 
     wire [11:0] rgb_bar1;
 	wire [15:0] py1;
@@ -246,7 +363,7 @@ module vga(
 		p_tick,
 		x,
 		y,
-		630,
+		638,
 		u2, d2
 	);
     
@@ -272,7 +389,7 @@ module vga(
 	end
 
 	always @(posedge p_tick) begin 
-	   rgb_reg <= rgb_ball | rgb_bar1 | rgb_bar2 | rgb_digit10 | rgb_digit11 | rgb_digit20 | rgb_digit21;
+	   rgb_reg <= rgb_ball | rgb_bar1 | rgb_bar2 | rgb_digit10 | rgb_digit11 | rgb_digit20 | rgb_digit21 | rgb_s | rgb_c | rgb_o | rgb_r | rgb_e | rgb_p1p | rgb_p11 | rgb_p2p | rgb_p22;
 	end
 
     // output

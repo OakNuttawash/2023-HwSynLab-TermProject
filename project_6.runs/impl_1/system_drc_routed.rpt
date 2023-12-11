@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sun Dec 10 02:19:08 2023
+| Date         : Tue Dec 12 00:13:10 2023
 | Host         : O4K running 64-bit major release  (build 9200)
 | Command      : report_drc -file system_drc_routed.rpt -pb system_drc_routed.pb -rpx system_drc_routed.rpx
 | Design       : system
@@ -50,13 +50,13 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net game/vga_sync_unit/p_tick is a gated clock net sourced by a combinational pin game/vga_sync_unit/h_count_reg[9]_i_1/O, cell game/vga_sync_unit/h_count_reg[9]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net game/vga_sync_unit/CLK is a gated clock net sourced by a combinational pin game/vga_sync_unit/h_count_reg[9]_i_1/O, cell game/vga_sync_unit/h_count_reg[9]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT game/vga_sync_unit/h_count_reg[9]_i_1 is driving clock pin of 8 cells. This could lead to large hold time violations. Involved cells are:
-game/ball_unit/rgb_reg[0], game/bar1/rgb_reg[0], game/bar2/rgb_reg[0], game/digit10/rgb_reg[11], game/digit11/rgb_reg[11], game/digit20/rgb_reg[11], game/digit21/rgb_reg[11], game/rgb_reg_reg[11]
+A LUT game/vga_sync_unit/h_count_reg[9]_i_1 is driving clock pin of 19 cells. This could lead to large hold time violations. Involved cells are:
+game/ball_unit/rgb_reg[0], game/bar1/rgb_reg[0], game/bar2/rgb_reg[0], game/digit10/rgb_reg[11], game/digit11/rgb_reg[11], game/digit20/rgb_reg[11], game/digit21/rgb_reg[11], game/digitC/rgb_reg[11], game/digitE/rgb_reg[11], game/digitO/rgb_reg[11], game/digitP11/rgb_reg[11], game/digitP1P/rgb_reg[11], game/digitP22/rgb_reg[11], game/digitP2P/rgb_reg[11], game/digitR/rgb_reg[11] (the first 15 of 19 listed)
 Related violations: <none>
 
 

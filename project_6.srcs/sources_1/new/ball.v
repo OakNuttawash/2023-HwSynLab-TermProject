@@ -31,7 +31,7 @@ module ball(
     );
     localparam R = 5;
     
-    reg [15:0] x = 300;
+    reg [15:0] x = 320;
     initial y = 300;
     reg [15:0] dx = 10;
     reg [15:0] dy = 13;
@@ -43,7 +43,7 @@ module ball(
         if (reset) begin
             dx = 10;
             dy = 13;
-            x = 300;
+            x = 320;
             y = 200;
             lhit = 0;
             rhit = 0;
